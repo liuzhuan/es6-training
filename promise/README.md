@@ -44,12 +44,12 @@ ES6 规定，`Promise` 对象是一个构造函数，用来生成 `Promise` 实�
 
 ```javascript
 const promise = new Promise((resolve, reject) => {
-	// do something ...
-	if (success) {
-		resolve(value);
-	} else {
-		reject(error);
-	}
+    // do something ...
+    if (success) {
+        resolve(value);
+    } else {
+        reject(error);
+    }
 });
 ```
 
