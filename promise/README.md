@@ -26,7 +26,7 @@ wx.checkJsApi({
 });
 ```
 
-![回调地狱](../assets/callback-hell.jpg)
+再如，Node.js 读取本地文件：
 
 ```javascript
 fs.readFile('/etc/passwd', (err, data) => {
@@ -34,6 +34,8 @@ fs.readFile('/etc/passwd', (err, data) => {
   console.log(data);
 });
 ```
+
+![回调地狱](../assets/callback-hell.jpg)
 
 不规范；嵌套深代码难懂。
 
@@ -46,7 +48,7 @@ $('body').on('custom', (res) => {
 })
 ```
 
-<a class="jsbin-embed" href="http://jsbin.com/cecerobici/embed?js,console">JS Bin on jsbin.com</a><script src="http://static.jsbin.com/js/embed.min.js?4.0.4"></script>
+[Live Demo](http://jsbin.com/cecerobici/edit?js,console)
 
 事件顺序很重要；可以多次触发
 
