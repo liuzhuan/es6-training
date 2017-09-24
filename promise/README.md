@@ -239,9 +239,55 @@ const p = Promise.all([p1, p2, p3]);
 
 上面代码中，`Promise.all` 方法接受一个数组作为参数，`p1`、`p2`、`p3` 都是 `Promise` 实例，如果不是，就会先调用下面讲到的 `Promise.resolve` 方法，将参数转为 `Promise` 实例，再进一步处理。
 
+```javascript
+const databasePromise = connectDatabase();
+
+const booksPromise = databasePromise
+  .then(findAllBooks);
+
+const userPromise = databasePromise
+  .then(getCurrentUser);
+
+Promise.all([
+  booksPromise,
+  userPromise
+])
+.then(([books, user]) => pickTopRecommentations(books, user));
+```
+
+## Promise.resolve()
+
+Promise.resolve等价于下面的写法。
+
+```javascript
+Promise.resolve('foo')
+// 等价于
+new Promise(resolve => resolve('foo'))
+```
+
+## Promise.reject()
+
+```javascript
+var p = Promise.reject('出错了');
+// 等同于
+var p = new Promise((resolve, reject) => reject('出错了'))
+
+p.then(null, function (s) {
+  console.log(s)
+});
+```
+
+## Axios 简介
+
+> Promise based HTTP client for the browser and node.js
+
+[Axios@Github](https://github.com/mzabriskie/axios)
+
 ## 参考文献
 - [Promise 对象](http://es6.ruanyifeng.com/#docs/promise) - 阮一峰
 - [Promises for asynchronous programming - Exploring ES6](http://exploringjs.com/es6/ch_promises.html) - Axel Rauschmayer
 - [Asynchronous programming (background) - Exploring ES6](http://exploringjs.com/es6/ch_async.html) - Axel Rauschmayer
 - [Philip Roberts: Help, I'm stuck in an event-loop](https://vimeo.com/96425312) - Philip Roberts
 - [ES6 Promises in Depth](https://ponyfoo.com/articles/es6-promises-in-depth) - Nicolás Bevacqua
+- [Retiring vue-resource](https://medium.com/the-vue-point/retiring-vue-resource-871a82880af4) - Evan You
+- [axios](https://github.com/mzabriskie/axios)
