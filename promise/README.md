@@ -97,6 +97,148 @@ const promise = new Promise((resolve, reject) => {
 });
 ```
 
+`Promise` 构造函数接受一个函数作为参数，该函数的两个参数分别是 `resolve` 和 `reject`。它们是两个函数，由 JavaScript 引擎提供，不用自己部署。
+
+`resolve` 函数的作用是，将 `Promise` 对象的状态从“未完成”变为“成功”（即从 `pending` 变为 `resolved`），在异步操作成功时调用，并将异步操作的结果，作为参数传递出去；`reject` 函数的作用是，将 `Promise` 对象的状态从“未完成”变为“失败”（即从 `pending` 变为 `rejected`），在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去。
+
+Promise 实例生成以后，可以用 `then` 方法分别指定 `resolved` 状态和 `rejected` 状态的回调函数。
+
+```javascript
+promise.then(value => {
+    // success
+}, err => {
+    // failure
+})
+```
+
+`then` 方法可以接受两个回调函数作为参数。第一个回调函数是 `Promise` 对象的状态变为 `resolved` 时调用，第二个回调函数是 `Promise` 对象的状态变为 `rejected` 时调用。其中，第二个函数是可选的，不一定要提供。这两个函数都接受 `Promise` 对象传出的值作为参数。
+
+下面是一个简单的 Promise 样例：
+
+```javascript
+{
+  function timeout(ms) {
+    return new Promise((resolve, reject) => {
+      setTimeout(resolve, ms, 'done');
+    });
+  }
+
+  timeout(100).then(value => {
+    console.log(`value = ${value}`);
+  })
+}
+```
+
+Promise 新建后就会立即执行。
+
+```javascript
+{
+  const promise = new Promise((resolve, reject) => {
+    console.log('Promise'); // 1.
+    resolve();
+  });
+
+  promise.then(function() {
+    console.log('resolved.'); // 3.
+  });
+
+  console.log('Hi!'); // 2. 
+}
+```
+
+下面是一个用 `Promise` 对象实现的 Ajax 操作的例子。
+
+```javascript
+function getJSON(url) {
+  return new Promise((resolve, reject) => {
+    const client = new XMLHttpRequest();
+    client.open("GET", url);
+    client.onreadystatechange = handler;
+    client.responseType = "json";
+    client.setRequestHeader("Accept", "application/json");
+    client.send();
+
+    function handler() {
+      if (this.readyState !== 4) {
+        return;
+      }
+      if (this.status === 200) {
+        resolve(this.response);
+      } else {
+        reject(new Error(this.statusText));
+      }
+    };
+  });
+};
+
+getJSON("/province.json")
+  .then(
+    json => {
+      console.log('Contents: ', json);
+    }, 
+    err => {
+      console.error('出错了', err);
+    }
+  );
+```
+
+## Promise.prototype.then()
+
+`Promise` 实例具有 `then` 方法，也就是说，`then` 方法是定义在原型对象 `Promise.prototype` 上的。它的作用是为 `Promise` 实例添加状态改变时的回调函数。
+
+`then` 方法返回的是一个新的 `Promise` 实例（注意，不是原来那个Promise实例）。因此可以采用链式写法，即 `then` 方法后面再调用另一个then方法。
+
+```javascript
+getJSON("/province.json").then(json => {
+  return json.CN;
+}).then(res => {
+  // ...
+});
+```
+
+采用链式的 `then`，可以指定一组按照次序调用的回调函数。这时，前一个回调函数，有可能返回的还是一个`Promise` 对象（即有异步操作），这时后一个回调函数，就会等待该 `Promise` 对象的状态发生变化，才会被调用。
+
+```javascript
+getJSON("/post/1.json").then(function(post) {
+  return getJSON(post.commentURL);
+}).then(function funcA(comments) {
+  console.log("resolved: ", comments);
+}, function funcB(err){
+  console.log("rejected: ", err);
+});
+```
+
+## Promise.prototype.catch()
+
+`Promise.prototype.catch` 方法是 `.then(null, rejection)` 的别名，用于指定发生错误时的回调函数。
+
+```javascript
+getJSON('/posts.json')
+  .then(posts => {
+    // ...
+  })
+  .catch(error => {
+    // 处理 getJSON 和前一个回调函数运行时发生的错误
+    console.log('发生错误！', error);
+  });
+```
+
+`Promise` 对象的错误具有“冒泡”性质，会一直向后传递，直到被捕获为止。
+
+一般来说，不要在 `then` 方法里面定义 `Reject` 状态的回调函数（即then的第二个参数），总是使用`catch` 方法。
+
+`catch` 方法返回的还是一个 Promise 对象，因此后面还可以接着调用 `then` 方法。
+
+## Promise.all()
+
+`Promise.all` 方法用于将多个 `Promise` 实例，包装成一个新的 `Promise` 实例。
+
+```javascript
+const p = Promise.all([p1, p2, p3]);
+```
+
+上面代码中，`Promise.all` 方法接受一个数组作为参数，`p1`、`p2`、`p3` 都是 `Promise` 实例，如果不是，就会先调用下面讲到的 `Promise.resolve` 方法，将参数转为 `Promise` 实例，再进一步处理。
+
 ## 参考文献
 - [Promise 对象](http://es6.ruanyifeng.com/#docs/promise) - 阮一峰
 - [Promises for asynchronous programming - Exploring ES6](http://exploringjs.com/es6/ch_promises.html) - Axel Rauschmayer
