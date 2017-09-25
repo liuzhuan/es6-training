@@ -55,5 +55,31 @@ setTimeout(() => foo = 'baz', 500);
 
 这一点与 CommonJS 规范完全不同。**CommonJS 模块输出的是值的缓存**，不存在动态更新
 
+## 原生的模块化支持
+
+2017年9月15日，Chrome 61 开始支持原生的 ES6 模块，只需使用 `<script type="module">` 嵌入即可。
+
+```html
+<script type="module">
+  import {addText} from './utils.js';
+  addText('Modules are pretty cool.');
+</script>
+```
+
+```javascript
+// utils.js
+export function addTextToBody(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  document.body.appendChild(div);
+}
+```
+
+Node.js 8.5.0 开始支持原生的 ES6 模块，不过需要使用 `--experimental-modules`，并且文件后缀必须是 `.mjs`。目前的计划是到 Node.js 10 LTS 才将默认值改为 ES 模块。
+
 ## 参考文献
 - [Module 的语法 - 阮一峰](http://es6.ruanyifeng.com/#docs/module)
+- [ES6 Modules in Depth](https://ponyfoo.com/articles/es6-modules-in-depth) - Nicolás Bevacqua, 2015/09/25
+- [New in Chrome 61](https://developers.google.com/web/updates/2017/09/nic61) - Pete LePage, 2017/09/15
+- [ECMAScript modules in browsers](https://jakearchibald.com/2017/es-modules-in-browsers/) - Jake Archibald, 2017/05/02
+- [Using ES modules natively in Node.js](http://2ality.com/2017/09/native-esm-node.html) - Dr. Axel Rauschmayer, 2017/09/12
