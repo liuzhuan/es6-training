@@ -56,6 +56,10 @@ $('body').on('custom', (res) => {
 
 Promise 是异步编程的一种解决方案，比传统的解决方案（回调函数和事件）更合理和更强大。它由社区最早提出和实现，ES6 将其写进语言标准，统一用法，原生提供 `Promise` 对象。
 
+![promise A+](../assets/promiseaplus.png)
+
+Promise/A+ 规范规定了 `.then()` 函数的行为。
+
 Promise 是一个容器，保存着某个未来才会结束的事件的结果。类似于彩票。
 
 ![Lottery](../assets/lottery.jpg)
