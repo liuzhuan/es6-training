@@ -283,10 +283,63 @@ p.then(null, function (s) {
 
 [Axios@Github](https://github.com/mzabriskie/axios)
 
+## jQuery 中的 Promise
+
+jQuery 用 `$.Deferred` 实现了 Promise 规范。可以打印看看：
+
+```javascript
+var def = $.Deferred();
+console.log(def);
+```
+
+`$.Deferred()` 返回一个对象，我们可以称之为 `Deferred` 对象，上面挂着一些熟悉的方法如：`done`、`fail`、`then`等。`jquery` 就是用这个 `Deferred` 对象来注册异步操作的回调函数，修改并传递异步操作的状态。
+
+### `done` 与 `fail`
+
+我们知道，`Promise` 规范中，`then` 方法接受两个参数，分别是执行完成和执行失败的回调，而 `jquery` 中进行了增强，还可以接受第三个参数，就是在 `pending` 状态时的回调，如下：
+
+```javascript
+deferred.then( doneFilter [, failFilter ] [, progressFilter ] )
+```
+
+除此之外，`jquery` 还增加了两个语法糖方法，`done` 和 `fail`，分别用来指定执行完成和执行失败的回调，也就是说这段代码：
+
+```javascript
+d.then(function(){
+  console.log('执行完成');
+}, function(){
+  console.log('执行失败');
+});
+```
+
+与这段代码是等价的：
+
+```javascript
+d.done(function(){
+  console.log('执行完成');
+})
+.fail(function(){
+  console.log('执行失败');
+});
+```
+
+### `always`
+
+`jquery` 的 `Deferred` 对象上还有一个 `always` 方法，不论执行完成还是执行失败，`always` 都会执行，有点类似 `ajax` 中的 `complete`。
+
+### 总结
+
+`$.Deferred` 实现了 `Promise` 规范，`then`、`done`、`fail`、`always`是 `Deferred` 对象的方法。`ajax` 返回一个 `Deferred` 对象，`success`、`error`、`complete` 是 `ajax` 提供的语法糖，功能与 `Deferred` 对象的 `done`、`fail`、`always` 一致
+
 ## 参考文献
 - [Promise 对象](http://es6.ruanyifeng.com/#docs/promise) - 阮一峰
 - [Promises for asynchronous programming - Exploring ES6](http://exploringjs.com/es6/ch_promises.html) - Axel Rauschmayer
 - [Asynchronous programming (background) - Exploring ES6](http://exploringjs.com/es6/ch_async.html) - Axel Rauschmayer
+- [Promise/A+](https://promisesaplus.com/)
+- [Promise A+ 规范中文](http://malcolmyu.github.io/malnote/2015/06/12/Promises-A-Plus/) - 于明昊, 2015/06/12
+- [大白话讲解Promise（一）](http://www.cnblogs.com/lvdabao/p/es6-promise-1.html) - 吕大豹, 2016/03/11
+- [大白话讲解Promise（二）理解 Promise 规范](http://www.cnblogs.com/lvdabao/p/5320705.html) - 吕大豹, 2016/03/25
+- [大白话讲解Promise（三）搞懂 jQuery 中的 Promise](http://www.cnblogs.com/lvdabao/p/jquery-deferred.html) - 吕大豹, 2016/03/29
 - [Philip Roberts: Help, I'm stuck in an event-loop](https://vimeo.com/96425312) - Philip Roberts
 - [ES6 Promises in Depth](https://ponyfoo.com/articles/es6-promises-in-depth) - Nicolás Bevacqua
 - [Retiring vue-resource](https://medium.com/the-vue-point/retiring-vue-resource-871a82880af4) - Evan You
