@@ -2,6 +2,10 @@
 
 ![lego](../assets/lego.png)
 
+现实世界的模块化成功案例：乐高积木、活字印刷...
+
+模块化的好处：提高复用性，提升效率，降低开发难度等。
+
 ## 关键词
 
 `import`, `export`, `default`, `as`
@@ -9,6 +13,8 @@
 ## 背景
 
 在 ES6 之前，社区制定了一些模块加载方案，最主要的有 `CommonJS` 和 `AMD` 两种。前者用于服务器，后者用于浏览器。ES6 在语言标准的层面上，实现了模块功能，而且实现得相当简单，完全可以取代 `CommonJS` 和 `AMD` 规范，成为浏览器和服务器通用的模块解决方案。
+
+> `commonJS` 是 2009 年 Mozilla 工程师 Kevin Dangoor 创建的社区组织，制定了很多规范，比如 `Promise/A`、`Modules` 等。CommonJS 最著名的实现是 Node.js。不隶属于 Ecma International TC39 委员会，但是有些 TC39 成员也会参与其中。
 
 ES6 模块的设计思想，是尽量的静态化，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。
 
@@ -186,3 +192,6 @@ HTTP/2 允许服务器未经请求，主动向客户端发送资源，这叫做�
 - [ECMAScript modules in browsers](https://jakearchibald.com/2017/es-modules-in-browsers/) - Jake Archibald, 2017/05/02
 - [Using ES modules natively in Node.js](http://2ality.com/2017/09/native-esm-node.html) - Dr. Axel Rauschmayer, 2017/09/12
 - [HTTP 协议入门](http://www.ruanyifeng.com/blog/2016/08/http.html) - 阮一峰, 2016/08/19
+- [CommonJS](https://www.wikiwand.com/en/CommonJS)
+- [Kevin Dangoor](http://www.kevindangoor.com/)
+- [CommonJS: JavaScript Standard Library](http://www.commonjs.org/)
