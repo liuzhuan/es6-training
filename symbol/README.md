@@ -4,6 +4,8 @@
 
 如果有一种机制，保证每个属性的名字都是独一无二的就好了，这样就从根本上防止属性名的冲突。这就是 ES6 引入 `Symbol` 的原因。
 
+> A symbol value may be used as an identifier for object properties; this is the data type's only purpose.
+
 ES6 引入了一种新的原始数据类型 `Symbol`，表示独一无二的值。它是 JavaScript 语言的第七种数据类型，前六种是：`undefined`、`null`、布尔值（`Boolean`）、字符串（`String`）、数值（`Number`）、对象（`Object`）。
 
 Symbol 值通过 `Symbol` 函数生成。
@@ -72,12 +74,42 @@ let obj = {
 }
 
 // 定义一些常量
+log.levels = {
+  DEBUG: Symbol('debug'),
+  INFO: Symbol('info'),
+  WARN: Symbol('warn')
+}
 
-
+log(log.levels.DEBUG, 'debug message')
 ```
+
+## 实例：消除魔术字符串
+
+```javascript
+const shapeType = {
+  triangle: Symbol()
+}
+
+function getArea(shape, options) {
+  let area = 0;
+  switch(shape) {
+    case shapeType.triangle:
+      area = .5 * options.width * options.height;
+      break;
+  }
+  return area;
+}
+
+getArea(shapeType.triangle, { width: 100, height: 100 });
+```
+
+## 属性名的遍历
+
+Symbol 作为属性名，该属性不会出现在 `for...in`、`for...of` 循环中，也不会被 `Object.keys()`、`Object.getOwnPropertyNames()`、`JSON.stringify()`返回。但是，它也不是私有属性，有一个 `Object.getOwnPropertySymbols` 方法，可以获取指定对象的所有 Symbol 属性名。
 
 ## Reference
 
 - [Symbol](http://es6.ruanyifeng.com/#docs/symbol) - 阮一峰
 - [ES6 Symbols in Depth](https://ponyfoo.com/articles/es6-symbols-in-depth) - Nicolás Bevacqua, 2015/09/09
 - [Symbols](http://exploringjs.com/es6/ch_symbols.html) - Axel Rauschmayer
+- [Symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol) - MDN
