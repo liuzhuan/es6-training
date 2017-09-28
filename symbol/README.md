@@ -1,8 +1,8 @@
 # Symbol
 
-## 一句话介绍
+![SnowFlakes](../assets/snowflakes.jpg)
 
-Symbol 就像一种特殊的“字符串”。
+每片 :snowflake: 都是独一无二的，就像 Symbol。
 
 ## 新的原始类型
 
@@ -25,7 +25,7 @@ typeof s
 
 因为 `Symbol` 不是构造函数，所以不能使用 `new` 命令。
 
-## 可选字符串作为参数
+## 可选字符串作为描述（`description`）
 
 `Symbol` 函数可以接受一个字符串作为参数，表示对 Symbol 实例的描述，主要是为了在控制台显示，或者转为字符串时，比较容易区分。
 
@@ -194,9 +194,18 @@ Symbol.keyFor(s2) // undefined
 - `Symbol.toStringTag`
 - `Symbol.unscopables`
 
+## 总结 
+
+获取 Symbol 的三种方式
+
+1. 使用 `Symbol()`。独一无二
+2. 使用 `Symbol.for(string)`。全局共享。
+3. 使用标准定义的“著名” Symbol 变量，比如：`Symbol.iterator`。特殊用途。
+
 ## Reference
 
 - [Symbol](http://es6.ruanyifeng.com/#docs/symbol) - 阮一峰
 - [ES6 Symbols in Depth](https://ponyfoo.com/articles/es6-symbols-in-depth) - Nicolás Bevacqua, 2015/09/09
 - [Symbols](http://exploringjs.com/es6/ch_symbols.html) - Axel Rauschmayer
 - [Symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol) - MDN
+- [ES6 In Depth: Symbols](https://hacks.mozilla.org/2015/06/es6-in-depth-symbols/) - Jason Orendorff, 2015/06/11
