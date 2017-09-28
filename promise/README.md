@@ -79,6 +79,8 @@ Promise 是一个容器，保存着某个未来才会结束的事件的结果。
 2. `fulfilled`（已成功）已中奖
 3. `rejected`（已失败）谢谢惠顾
 
+![Promise resolve reject](../assets/promise-resolve-reject.png)
+
 ## 优点
 
 1. 避免层层嵌套（回调地狱）
@@ -352,3 +354,4 @@ d.done(function(){
 - [ES6 Promises in Depth](https://ponyfoo.com/articles/es6-promises-in-depth) - Nicolás Bevacqua
 - [Retiring vue-resource](https://medium.com/the-vue-point/retiring-vue-resource-871a82880af4) - Evan You
 - [axios](https://github.com/mzabriskie/axios)
+- [Promise](https://javascript.info/promise-basics) - Ilya Kantor
