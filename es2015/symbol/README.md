@@ -1,6 +1,6 @@
 # Symbol
 
-![SnowFlakes](../assets/snowflakes.jpg)
+![SnowFlakes](../../assets/snowflakes.jpg)
 
 每片 :snowflake: 都是独一无二的，就像 Symbol。
 

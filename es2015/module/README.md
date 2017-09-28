@@ -1,6 +1,6 @@
 # Module 模块化
 
-![lego](../assets/lego.png)
+![lego](../../assets/lego.png)
 
 现实世界的模块化成功案例：乐高积木、活字印刷...
 
@@ -171,7 +171,7 @@ Node.js 8.5.0 开始支持原生的 ES6 模块，不过需要使用 `--experimen
 
 ## HTTP/2
 
-![http1 vs http2](../assets/http1-vs-http2.gif)
+![http1 vs http2](../../assets/http1-vs-http2.gif)
 
 ### 多工
 

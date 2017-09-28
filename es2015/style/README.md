@@ -1,6 +1,6 @@
 # 编程风格
 
-![Style Guide](../assets/style-guide.jpg)
+![Style Guide](../../assets/style-guide.jpg)
 
 ## 目的
 
@@ -8,7 +8,7 @@
 
 不整洁的代码给人的感觉如下图：
 
-![Chaos Cabel](../assets/chaos.jpg)
+![Chaos Cabel](../../assets/chaos.jpg)
 
 整洁的代码看[这里](https://www.buzzfeed.com/lukebailey/satisfying-cables?utm_term=.ryzeoaRen#.ltYZkaPZx)
 
@@ -25,7 +25,7 @@
 
 ## EditorConfig
 
-![EditorConfig](../assets/editorconfig.png)
+![EditorConfig](../../assets/editorconfig.png)
 
 EditorConfig 帮助开发人员在不同的编辑器和 IDE 中保持一致的编码风格。
 
@@ -73,7 +73,9 @@ $ ./node_modules/.bin/eslint yourfile.js
 
 ## 代码质量
 
-![wtfm](../assets/wtfm.jpg)
+![wtfm](../../assets/wtfm.jpg)
+
+> 检验代码质量的唯一标准：脏口次数/每分钟
 
 ## 参考文献
 - [编程风格 - 阮一峰](http://es6.ruanyifeng.com/#docs/style)

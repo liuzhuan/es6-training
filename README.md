@@ -4,11 +4,11 @@
 
 ### ES2015
 
-- [Promise](./promise/README.md)
-- [Class](./class/README.md)
-- [Module](./module/README.md)
-- [Style](./style/README.md)
-- [Symbol](./symbol/README.md)
+- [Promise](./es2015/promise/README.md)
+- [Class](./es2015/class/README.md)
+- [Module](./es2015/module/README.md)
+- [Style](./es2015/style/README.md)
+- [Symbol](./es2015/symbol/README.md)
 
 ### ES2016
 

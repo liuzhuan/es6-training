@@ -1,6 +1,6 @@
 # Promise
 
-![ES6 Promise Logo](../assets/es6-promise-logo.png)
+![ES6 Promise Logo](../../assets/es6-promise-logo.png)
 
 ## 关键词
 
@@ -35,7 +35,7 @@ fs.readFile('/etc/passwd', (err, data) => {
 });
 ```
 
-![回调地狱](../assets/callback-hell.jpg)
+![回调地狱](../../assets/callback-hell.jpg)
 
 不规范；嵌套深代码难懂。
 
@@ -52,7 +52,7 @@ $('body').on('custom', (res) => {
 
 事件顺序很重要；可以多次触发
 
-![LED Screen](../assets/led-screen.jpg)
+![LED Screen](../../assets/led-screen.jpg)
 
 类似叫号系统，必须先取号（注册监听函数），然后等待叫号（事件触发）。否则，就没法办理业务（事件处理函数）。
 
@@ -60,13 +60,13 @@ $('body').on('custom', (res) => {
 
 Promise 是异步编程的一种解决方案，比传统的解决方案（回调函数和事件）更合理和更强大。它由社区最早提出和实现，ES6 将其写进语言标准，统一用法，原生提供 `Promise` 对象。
 
-![promise A+](../assets/promiseaplus.png)
+![promise A+](../../assets/promiseaplus.png)
 
 Promise/A+ 规范规定了 `.then()` 函数的行为。
 
 Promise 是一个容器，保存着某个未来才会结束的事件的结果。类似于彩票。
 
-![Lottery](../assets/lottery.jpg)
+![Lottery](../../assets/lottery.jpg)
 
 ## 两个特点
 
@@ -79,7 +79,7 @@ Promise 是一个容器，保存着某个未来才会结束的事件的结果。
 2. `fulfilled`（已成功）已中奖
 3. `rejected`（已失败）谢谢惠顾
 
-![Promise resolve reject](../assets/promise-resolve-reject.png)
+![Promise resolve reject](../../assets/promise-resolve-reject.png)
 
 ## 优点
 
