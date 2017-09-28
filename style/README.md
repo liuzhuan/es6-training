@@ -6,6 +6,12 @@
 
 写出合理的、易于阅读和维护的代码。因为代码是给人看的。
 
+不整洁的代码给人的感觉如下图：
+
+![Chaos Cabel](../assets/chaos.jpg)
+
+整洁的代码看[这里](https://www.buzzfeed.com/lukebailey/satisfying-cables?utm_term=.ryzeoaRen#.ltYZkaPZx)
+
 ## 常见规则
 
 - 避免使用 `var`, 尽可能使用 `const`
@@ -74,3 +80,4 @@ $ ./node_modules/.bin/eslint yourfile.js
 - [ESLint](https://eslint.org/)
   - [Getting Started with ESLint - ESLint](https://eslint.org/docs/user-guide/getting-started)
   - [Rules](https://eslint.org/docs/rules/)
+- [23 Photos That Will Make Anyone Who Works In IT Satisfied](https://www.buzzfeed.com/lukebailey/satisfying-cables?utm_term=.ryzeoaRen#.ltYZkaPZx) - Luke Bailey, 2016/01/20
