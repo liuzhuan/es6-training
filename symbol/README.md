@@ -61,6 +61,21 @@ Symbol 值不能与其他类型的值进行运算，会报错。但是可以显�
 
 由于每一个 Symbol 值都是不相等的，这意味着 Symbol 值可以作为标识符，用于对象的属性名，就能保证不会出现同名的属性。这对于一个对象由多个模块构成的情况非常有用，能防止某一个键被不小心改写或覆盖。
 
+```javascript
+let mySymbol = Symbol()
+
+let a = {}
+a[mySymbol] = 'Hello' // 必须放到方括号中
+
+let obj = {
+  [mySymbol](arg) { ... } // 简写的函数形式
+}
+
+// 定义一些常量
+
+
+```
+
 ## Reference
 
 - [Symbol](http://es6.ruanyifeng.com/#docs/symbol) - 阮一峰
