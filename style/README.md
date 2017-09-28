@@ -71,6 +71,10 @@ $ ./node_modules/.bin/eslint --init
 $ ./node_modules/.bin/eslint yourfile.js
 ```
 
+## 代码质量
+
+![wtfm](../assets/wtfm.jpg)
+
 ## 参考文献
 - [编程风格 - 阮一峰](http://es6.ruanyifeng.com/#docs/style)
 - [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
@@ -81,3 +85,4 @@ $ ./node_modules/.bin/eslint yourfile.js
   - [Getting Started with ESLint - ESLint](https://eslint.org/docs/user-guide/getting-started)
   - [Rules](https://eslint.org/docs/rules/)
 - [23 Photos That Will Make Anyone Who Works In IT Satisfied](https://www.buzzfeed.com/lukebailey/satisfying-cables?utm_term=.ryzeoaRen#.ltYZkaPZx) - Luke Bailey, 2016/01/20
+- [WTFs/m](http://www.osnews.com/story/19266/WTFs_m) - Thom Holwerda, 2008/02/04
