@@ -37,7 +37,7 @@ fs.readFile('/etc/passwd', (err, data) => {
 
 ![回调地狱](../../assets/callback-hell.jpg)
 
-不规范；嵌套深代码难懂。
+特点：语法没有规范；嵌套深代码难懂。
 
 ### 事件
 
@@ -48,13 +48,13 @@ $('body').on('custom', (res) => {
 })
 ```
 
-[Live Demo](http://jsbin.com/cecerobici/edit?js,console)
-
-事件顺序很重要；可以多次触发
+类似叫号系统，叫号时如果不在现场，就会错失机会。
 
 ![LED Screen](../../assets/led-screen.jpg)
 
-类似叫号系统，必须先取号（注册监听函数），然后等待叫号（事件触发）。否则，就没法办理业务（事件处理函数）。
+[Live Demo](http://jsbin.com/cecerobici/edit?js,console)
+
+特点：事件顺序很重要；可以多次触发
 
 ## 含义
 
