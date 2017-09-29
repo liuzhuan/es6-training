@@ -137,7 +137,7 @@ promise.then(value => {
     });
   }
 
-  timeout(100).then(value => {
+  timeout(1000).then(value => {
     console.log(`value = ${value}`);
   })
 }
