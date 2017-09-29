@@ -2,22 +2,18 @@
 
 ## 目录
 
-### ES2015
-
+- 背景知识
+- let & const
+- 变量的解构赋值
+- 字符串的扩展
+- 对象的扩展
+- 数组的扩展
+- 函数的扩展
+    - 箭头函数
 - [Promise](./es2015/promise/README.md)
 - [Class](./es2015/class/README.md)
 - [Module](./es2015/module/README.md)
 - [Style](./es2015/style/README.md)
-- [Symbol](./es2015/symbol/README.md)
-
-### ES2016
-
-- [Array.prototype.includes](./es2016/array-includes/README.md)
-- [指数符号 **](./es2016/exponentiation-operator/README.md)
-
-### ES2017
-
-- [Async 函数](./es2017/async-functions/README.md)
 
 ## 参考文献
 
