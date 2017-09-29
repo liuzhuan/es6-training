@@ -60,13 +60,15 @@ $('body').on('custom', (res) => {
 
 Promise 是异步编程的一种解决方案，比传统的解决方案（回调函数和事件）更合理和更强大。它由社区最早提出和实现，ES6 将其写进语言标准，统一用法，原生提供 `Promise` 对象。
 
-![promise A+](../../assets/promiseaplus.png)
-
-Promise/A+ 规范规定了 `.then()` 函数的行为。
-
 Promise 是一个容器，保存着某个未来才会结束的事件的结果。类似于彩票。
 
 ![Lottery](../../assets/lottery.jpg)
+
+### `Promise/A+` 标准
+
+![promise A+](../../assets/promiseaplus.png)
+
+Promise/A+ 规范规定了通用的 `.then()` 函数的行为。
 
 ## 两个特点
 
@@ -287,11 +289,85 @@ p.then(null, function (s) {
 });
 ```
 
-## Axios 简介
+## Promise 相关类库
+
+### Axios
 
 > Promise based HTTP client for the browser and node.js
 
 [Axios@Github](https://github.com/mzabriskie/axios)
+
+使用方法：
+
+```javascript
+// Make a request for a user with a given ID
+axios.get('/user?ID=12345')
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+```
+
+发起 POST 请求：
+
+```javascript
+axios.post('/user', {
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+```
+
+一个使用 axios [别人家的例子](https://github.com/superman66/vue-axios-github)
+
+### whatwg-fetch
+
+> A `window.fetch` JavaScript polyfill.
+
+fetch 是用来代替 `XMLHttpRequest` 的方法。属于 Web Platform API，由 WHATWG 工作组指定规范。
+
+![Working Groups](../../assets/work-groups.jpg)
+
+[whatwg-fetch @ github](https://github.com/github/fetch)
+
+使用方法如下：
+
+```javascript
+fetch(url, options).then(function(response) {
+  // handle HTTP response
+}, function(error) {
+  // handle network error
+})
+```
+
+比如，发送 POST 请求：
+
+```javascript
+fetch(url, {
+  method: "POST",
+  body: JSON.stringify(data),
+  headers: {
+    "Content-Type": "application/json"
+  },
+  credentials: "same-origin"
+}).then(function(response) {
+  response.status     //=> number 100–599
+  response.statusText //=> String
+  response.headers    //=> Headers
+  response.url        //=> String
+
+  return response.text()
+}, function(error) {
+  error.message //=> String
+})
+```
 
 ## jQuery 中的 Promise
 
