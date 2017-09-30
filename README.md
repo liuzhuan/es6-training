@@ -2,7 +2,10 @@
 
 ## 目录
 
+### ES2015
+
 - 背景知识
+- [Babel 的使用](./babel/README.md)
 - let & const
 - 变量的解构赋值
 - 字符串的扩展
@@ -14,7 +17,15 @@
 - [Promise](./es2015/promise/README.md)
 - [Class](./es2015/class/README.md)
 - [Module](./es2015/module/README.md)
-- [Style](./es2015/style/README.md)
+- [Code Style](./es2015/style/README.md)
+- [Symbol](./es2015/symbol/README.md)
+
+### ES2016
+
+- [Array.prototype.includes](./es2016/array-includes/README.md)
+- [指数符号 **](./es2016/exponentiation-operator/README.md)
+
+### ES2017
 
 ## 参考文献
 
