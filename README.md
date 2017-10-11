@@ -14,11 +14,16 @@
 - 数组的扩展
 - 函数的扩展
     - 箭头函数
-- [Promise](./es2015/promise/README.md)
+- [Promise](./es2015/promise/README.md) :+1:
 - [Class](./es2015/class/README.md)
 - [Module](./es2015/module/README.md)
 - [Code Style](./es2015/style/README.md)
 - [Symbol](./es2015/symbol/README.md)
+- [`for-of` 循环](./es2015/for-of-loop/README.md)
+- Maps 和 Sets
+- 类型数组
+- Iterables 和 iterators
+- [生成器](./es2015/generators/README.md)
 
 ### ES2016
 
@@ -40,3 +45,4 @@
 - [Exploring ES6](http://exploringjs.com/es6/) - Dr. Axel Rauschmayer
 - [Exploring ES2016 and ES2017](http://exploringjs.com/es2016-es2017/) - Dr. Axel Rauschmayer
 - [Understanding ECMAScript 6](https://github.com/nzakas/understandinges6) - Nicholas C. Zakas
+- [ponyfoo.com](https://ponyfoo.com/) - Nicolás Bevacqua

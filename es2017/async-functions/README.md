@@ -23,3 +23,4 @@ async 函数有如下形式：
 - [async 函数](http://es6.ruanyifeng.com/#docs/async) - 阮一峰
 - [async functio | mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
 - [await | mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
+- [Understanding JavaScript's async await | ponyfoo.com](https://ponyfoo.com/articles/understanding-javascript-async-await) - Nicolás Bevacqua, 2016/02/04
