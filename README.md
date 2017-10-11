@@ -1,4 +1,6 @@
-# ES6 培训
+# ES6+ 培训
+
+ES6+ 包括 ES2015(ES6), ES2016(ES7), ES2017(ES8), ...
 
 ## 目录
 
@@ -19,8 +21,8 @@
 - [Module](./es2015/module/README.md)
 - [Code Style](./es2015/style/README.md)
 - [Symbol](./es2015/symbol/README.md)
+- [Maps 和 Sets](./es2015/maps-and-sets/README.md)
 - [`for-of` 循环](./es2015/for-of-loop/README.md)
-- Maps 和 Sets
 - 类型数组
 - Iterables 和 iterators
 - [生成器](./es2015/generators/README.md)
