@@ -1,4 +1,4 @@
-# Iterator 和 for-of 循环
+# Iterator 和 for...of 循环
 
 ## Iterator （遍历器）
 
@@ -35,9 +35,11 @@ interface IterationResult {
 
 ES6 规定，默认的 Iterator 接口部署在数据结构的 `Symbol.iterator` 属性，或者说，一个数据结构只要具有`Symbol.iterator` 属性，就可以认为是“可遍历的”（iterable）。
 
-## for..of 循环
+## `for...of` 循环
 
-`for-of` 是 ES6 引入的新循环，用来替换 `for-in` 和 `forEach()` ，并且支持新的 iteration 协议。
+ES6 借鉴 C++、Java、C# 和 Python 语言，引入了 `for...of` 循环，作为遍历所有数据结构的统一的方法。
+
+`for...of` 是 ES6 引入的新循环，用来替换 `for-in` 和 `forEach()` ，并且支持新的 iteration 协议。
 
 可以使用它遍历 `iterable` 对象（数组，字符串，Maps, Sets 等）:
 
@@ -51,7 +53,7 @@ for (const x of iterable) {
 // b
 ```
 
-`break` 和 `continue` 在 `for-of` 循环中正常运行：
+`break` 和 `continue` 在 `for...of` 循环中正常运行：
 
 ```javascript
 for (const x of ['a', '', 'b']) {
@@ -83,8 +85,8 @@ for (const [key, value] of map) {
 
 ## 注意事项
 
-`for-of` 只能用于 iterable 类型。
+`for...of` 只能用于 iterable 类型。
 
 ## References
-- [The for-of loop | exploringjs.com](http://exploringjs.com/es6/ch_for-of.html) - Dr. Axel Rauschmayer
+- [The for...of loop | exploringjs.com](http://exploringjs.com/es6/ch_for...of.html) - Dr. Axel Rauschmayer
 - [Iterator 和 for...of 循环](http://es6.ruanyifeng.com/#docs/iterator) -  阮一峰
