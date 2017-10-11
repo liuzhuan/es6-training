@@ -28,6 +28,11 @@
 ### ES2017
 
 - [async 函数](./es2017/async-functions/README.md)
+- Shared memory and atomics
+- Object.entries() & Object.values()
+- 字符串新增方法：[padStart & padEnd](./es2017/string-pad/README.md)
+- Object.getOwnPropertyDescriptors()
+- [参数列表末尾逗号的合法化](./es2017/trailing-commas/README.md)
 
 ## 参考文献
 
