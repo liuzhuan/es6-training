@@ -1,4 +1,6 @@
-# Map 和 Set 数据结构
+# Set 和 Map
+
+简单来讲,  Set 是去重的数组，Map 是增强版的 Object。
 
 ## Set（集合）
 
@@ -104,6 +106,57 @@ ws.add(Symbol())
 其次，WeakSet 中的对象都是弱引用，即垃圾回收机制不考虑 WeakSet 对该对象的引用。
 
 因此，WeakSet 适合临时存放一组对象，以及存放跟对象绑定的信息。只要这些对象在外部消失，它在 WeakSet 里面的引用就会自动消失。ES6 规定 WeakSet 不可遍历。
+
+## Map
+
+![ES6 Map Operations](../../assets/es6-map.png)
+
+JavaScript 的对象（Object），本质上是键值对的集合（Hash 结构），但是传统上只能用字符串当作键。这给它的使用带来了很大的限制。
+
+```js
+const data = {};
+const element = document.getElementById('myDiv');
+
+data[element] = 'metadata';
+data['[object HTMLDivElement]'] // "metadata"
+```
+
+上面代码原意是将一个 DOM 节点作为对象 data 的键，但是由于对象只接受字符串作为键名，所以element 被自动转为字符串 `[object HTMLDivElement]`。
+
+为了解决这个问题，ES6 提供了 Map 数据结构。它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。
+
+```js
+const m = new Map();
+const o = {p: 'Hello World'};
+
+m.set(o, 'content')
+m.get(o) // "content"
+
+m.has(o) // true
+m.delete(o) // true
+m.has(o) // false
+```
+
+Map 的键实际上是跟内存地址绑定的，只要内存地址不一样，就视为两个键。这就解决了同名属性碰撞（clash）的问题，我们扩展别人的库的时候，如果使用对象作为键名，就不用担心自己的属性与原作者的属性同名。
+
+## WeakMap
+
+一个典型应用场景是，在网页的 DOM 元素上添加数据，就可以使用 WeakMap 结构。当该 DOM 元素被清除，其所对应的 WeakMap 记录就会自动被移除。
+
+```js
+const wm = new WeakMap();
+
+const element = document.getElementById('example');
+
+wm.set(element, 'some information');
+wm.get(element) // "some information"
+```
+
+总之，WeakMap 的专用场合就是，它的键所对应的对象，可能会在将来消失。**`WeakMap` 结构有助于防止内存泄漏**。
+
+WeakMap 只有四个方法可用：`get()`、`set()`、`has()`、`delete()`。
+
+> 是因为功能少，所以才叫 `弱Map` 么？
 
 ## References
 - [Set 和 Map 数据结构](http://es6.ruanyifeng.com/#docs/set-map) - 阮一峰
