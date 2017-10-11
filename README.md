@@ -27,6 +27,8 @@
 
 ### ES2017
 
+- [async 函数](./es2017/async-functions/README.md)
+
 ## 参考文献
 
 - [ES6 标准入门](http://es6.ruanyifeng.com/) - 阮一峰
