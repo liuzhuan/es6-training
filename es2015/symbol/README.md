@@ -206,6 +206,6 @@ Symbol.keyFor(s2) // undefined
 
 - [Symbol](http://es6.ruanyifeng.com/#docs/symbol) - 阮一峰
 - [ES6 Symbols in Depth](https://ponyfoo.com/articles/es6-symbols-in-depth) - Nicolás Bevacqua, 2015/09/09
-- [Symbols](http://exploringjs.com/es6/ch_symbols.html) - Axel Rauschmayer
+- [Symbols](http://exploringjs.com/es6/ch_symbols.html) - Dr. Axel Rauschmayer
 - [Symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol) - MDN
 - [ES6 In Depth: Symbols](https://hacks.mozilla.org/2015/06/es6-in-depth-symbols/) - Jason Orendorff, 2015/06/11
