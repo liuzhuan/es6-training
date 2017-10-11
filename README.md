@@ -23,8 +23,7 @@ ES6+ 包括 ES2015(ES6), ES2016(ES7), ES2017(ES8), ...
 - [Symbol](./es2015/symbol/README.md)
 - [Maps 和 Sets](./es2015/maps-and-sets/README.md)
 - [Iterator 和 `for-of` 循环](./es2015/for-of-loop/README.md)
-- 类型数组
-- Iterables 和 iterators
+- [Typed Arrays 类型数组](./es2015/typed-arrays/README.md)
 - [生成器](./es2015/generators/README.md)
 
 ### ES2016
