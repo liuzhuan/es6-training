@@ -1,5 +1,11 @@
 # 类型数组
 
+## 思维导图
+
+![Typed Arrays](../../assets/typed-arrays.png)
+
+## 简介
+
 `ArrayBuffer` 对象、`TypedArray` 视图和 `DataView` 视图是 JavaScript 操作二进制数据的一个接口。这些对象早就存在，属于独立的规格（2011年2月发布），ES6 将它们纳入了 ECMAScript 规格，并且增加了新的方法。它们都是以数组的语法处理二进制数据，所以统称为**二进制数组**。
 
 这个接口的原始设计目的，与 WebGL 项目有关。所谓 WebGL，就是指浏览器与显卡之间的通信接口，为了满足 JavaScript 与显卡之间大量的、实时的数据交换，它们之间的数据通信必须是二进制的，而不能是传统的文本格式。
@@ -30,6 +36,8 @@
 
 注意，二进制数组并不是真正的数组，而是类似数组的对象。
 
+> 尽量避免使用 Uint8C 类型，这是 Canvas 遗留的古老接口。
+
 ## ArrayBuffer 对象
 
 `ArrayBuffer` 对象代表储存二进制数据的一段内存，它不能直接读写，只能通过视图（`TypedArray` 视图和 `DataView` 视图)来读写，视图的作用是以指定格式解读二进制数据。
@@ -40,9 +48,15 @@
 const buf = new ArrayBuffer(32);
 ```
 
-未完待续...
+TypedArray API 的结构图如下：
 
-## References
+![TypedArray API Diagram](../../assets/typed_arrays_class_diagram.jpg)
 
-- [Typed Arrays | exploringjs.com](http://exploringjs.com/es6/ch_typed-arrays.html) - Dr. Axel Rauschmayer
-- [ArrayBuffer](http://es6.ruanyifeng.com/#docs/arraybuffer) - 阮一峰
+图片来自 http://exploringjs.com/es6/ch_typed-arrays.html
+
+## 参考文档
+
+- http://exploringjs.com/es6/ch_typed-arrays.html
+- http://es6.ruanyifeng.com/#docs/arraybuffer
+- http://www.ecma-international.org/ecma-262/6.0/#sec-typedarray-objects
+- https://www.html5rocks.com/en/tutorials/webgl/typed_arrays/
