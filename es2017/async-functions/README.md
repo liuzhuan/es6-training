@@ -1,5 +1,7 @@
 # Async 函数
 
+`async 函数` 由 Brian Terlson 提出。
+
 async 函数有如下形式：
 
 - 函数声明：  `async function foo() {};`
@@ -7,15 +9,35 @@ async 函数有如下形式：
 - 方法定义：  `let obj = { async foo() {} };`
 - 箭头函数：  `const foo = async () => {};`
 
+async 函数总会返回 Promise 实例。
+
+```javascript
+/** 返回一个 fulfilling 实例 */
+async function asyncFunc() {
+  return 123;
+}
+
+asyncFunc()
+  .then(x => console.log(x))
+
+/** 返回一个 rejecting 实例 */
+async function asyncFunc() {
+  throw new Error('Problem!')
+}
+
+asyncFunc()
+  .catch(err => console.log(err))
+```
+
 ## await
 
-`await` 操作符用来等待 `Promise`。只能在 `async 函数` 中使用。用法如下：
+`await` 操作符可等待 `Promise`，其只能在 `async` 函数内使用。用法如下：
 
 ```javascript
 [rv] = await expression
 ```
 
-其中，`expression` 是一个 `Promise` 对象或等待的任何数值。`rv` 是 `Promise` 成功后的固定值或者其他数值本身（当 `expression` 不是 `Promise` 类型时）。
+其中，`expression` 是 `Promise` 对象或任何数值。`rv` 是 `Promise` 成功后的固定值或者其他数值本身（当 `expression` 不是 `Promise` 类型时）。
 
 ## References
 

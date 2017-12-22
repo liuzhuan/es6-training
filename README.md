@@ -33,7 +33,7 @@ ES6+ 包括 ES2015(ES6), ES2016(ES7), ES2017(ES8), ...
 
 ### ES2017
 
-- [async 函数](./es2017/async-functions/README.md) :+1:
+- [async/await 异步编程](./es2017/async-functions/README.md) :+1:
 - Shared memory and atomics
 - [Object.entries() & Object.values()](./es2017/object-entries-values/README.md)
 - 字符串新增方法：[padStart & padEnd](./es2017/string-pad/README.md)
