@@ -1,6 +1,8 @@
 # Promise
 
-![ES6 Promise Logo](../../assets/es6-promise-logo.png)
+![Promise Film](../../assets/promise-film.jpg)
+
+> 图片来自陈凯歌导演的电影《无极》海报，英文名 *The Promise*
 
 ## 关键词
 
