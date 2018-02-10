@@ -1,6 +1,6 @@
 # Promise
 
-![Promise Film](../../assets/promise-film.jpg)
+<img src="../../assets/promise-film.jpg" style="max-width: 300px;width: 100%;" />
 
 > 图片来自陈凯歌导演的电影《无极》海报，英文名 *The Promise*
 
